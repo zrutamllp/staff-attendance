@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f3f0;
+  --foreground: #1a1a1a;
+  --surface: #efe8e1;
+  --surface-elevated: #ffffff;
+  --muted: #6b6560;
+  --accent: #2d6a5a;
+  --charcoal: #1a1a1a;
+  --present: #2d6a5a;
+  --absent: #b54a4a;
+  --leave: #c4843a;
+  --halfday: #5a6b7a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-charcoal: var(--charcoal);
+  --color-present: var(--present);
+  --color-absent: var(--absent);
+  --color-leave: var(--leave);
+  --color-halfday: var(--halfday);
+  --font-sans: var(--font-outfit);
+  --font-mono: var(--font-jetbrains);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  min-height: 100dvh;
+}
+
+.card {
+  @apply rounded-3xl bg-surface-elevated p-4 shadow-sm sm:p-5;
+}
+
+.btn-primary {
+  @apply rounded-2xl bg-charcoal px-6 py-3.5 text-sm font-medium text-white transition hover:opacity-90 active:scale-[0.98];
+}
+
+.btn-secondary {
+  @apply rounded-2xl border border-stone-300 bg-surface-elevated px-6 py-3.5 text-sm font-medium text-charcoal transition hover:bg-surface active:scale-[0.98];
+}
+
+.btn-danger {
+  @apply rounded-2xl bg-absent px-6 py-3.5 text-sm font-medium text-white transition hover:opacity-90;
+}
+
+.input-field {
+  @apply w-full rounded-2xl border border-stone-200 bg-surface-elevated px-4 py-3.5 text-sm outline-none transition focus:border-charcoal;
+}
+
+.search-field {
+  @apply w-full rounded-2xl border border-stone-200 bg-surface-elevated py-3.5 pr-4 pl-12 text-sm outline-none transition focus:border-charcoal;
+}
+
+.status-stamp {
+  @apply flex h-9 w-9 items-center justify-center rounded-full text-xs font-semibold transition active:scale-95;
+}
+
+.page-container {
+  @apply mx-auto flex min-h-0 w-full max-w-lg flex-1 flex-col overflow-hidden px-4 pb-24 pt-6 md:max-w-none md:px-6 md:pb-5 md:pt-5 lg:px-8;
+}
+
+.admin-page {
+  @apply p-4 pt-[4.5rem] sm:p-6 sm:pt-[4.5rem] lg:p-8 lg:pt-8;
+}
+
+.table-scroll {
+  @apply -mx-1 overflow-x-auto overscroll-x-contain px-1;
+}
+
+.table-scroll-hint {
+  @apply mb-2 text-xs text-muted lg:hidden;
+}
+
+.modal-overlay {
+  @apply fixed inset-0 z-[100] flex items-center justify-center bg-black/40 p-4;
+}
+
+.modal-panel {
+  @apply w-full max-w-md max-h-[85dvh] overflow-y-auto rounded-3xl bg-surface-elevated p-6 shadow-xl;
+}
+
+.admin-container {
+  @apply h-dvh overflow-hidden bg-background;
+}
+
+.admin-main {
+  @apply h-dvh overflow-y-auto pt-14 lg:ml-64 lg:pt-0;
+}
+
+.manager-container {
+  @apply h-dvh overflow-hidden bg-background;
+}
+
+.manager-main {
+  @apply flex h-dvh flex-col overflow-hidden md:ml-64;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4ccc4;
+  border-radius: 999px;
+}
